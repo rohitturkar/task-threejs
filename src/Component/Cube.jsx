@@ -44,7 +44,7 @@ const Cube = () => {
   };
 
   useEffect(() => {
-    // Here i have done initial setup for Threejs scene
+    // here i have done initial setup for Threejs scene
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -63,7 +63,7 @@ const Cube = () => {
     // Created the cube
     const geometry = new THREE.BoxGeometry();
     const image = new THREE.TextureLoader().load(photo); // loading the image for one of the side
-    image.colorSpace = THREE.SRGBColorSpace; //color correction for threejs
+    image.colorSpace = THREE.SRGBColorSpace; //color correction 
 
     // setting different color for each side and the image for last side
     const materials = [
@@ -95,13 +95,12 @@ const Cube = () => {
     // this light will caste the shadow
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(5, 5, 5);
-    //Adjusting the shadow  properties
     light.castShadow = true;
     light.shadow.mapSize.width = 1024;
     light.shadow.mapSize.height = 1024;
     scene.add(light);
 
-    // This is to add a fog light
+    
     const ambientLight = new THREE.AmbientLight(0x404040);
     scene.add(ambientLight); //added ambientlight to the scene
 
